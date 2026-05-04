@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2 id="msg"></h2>
+
+    <form action="/saveColor" method="POST">
+        <input type="hidden" name="username" id="u">
+        <input type="hidden" name="password" id="p">
+
+        <input type="text" name="favcolor" placeholder="Favorite Color" required><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        const q = new URLSearchParams(location.search);
+        document.getElementById("msg").innerText = "Enter your favorite color " + q.get("username");
+        document.getElementById("u").value = q.get("username");
+        document.getElementById("p").value = q.get("password");
+    </script>
+
+</body>
+
+</html>
