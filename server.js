@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require("express"); require('dotenv').config();;
 const cors = require("cors");
 const { MongoClient } = require("mongodb");
 const fs = require("fs");
@@ -45,4 +45,4 @@ app.post("/saveColor", async (req, res) => {
     res.send("Saved Successfully");
 });
 
-app.listen(2000, () => console.log("Server running on port 2000"));
+app.listen(process.env.PORT, () => console.log(`Server running on port ${process.env.PORT}`));
